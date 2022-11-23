@@ -34,7 +34,12 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ['./test/specs/**/*.js'],
+  specs: [
+    // './test/specs/**/*.js'
+    // './test/specs/eventValidationSignIn.spec.js',
+    './test/specs/test.spec.js'
+
+  ],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -69,6 +74,10 @@ exports.config = {
       maxInstances: 5,
       //
       browserName: 'chrome',
+      // browserName: 'chrome',
+      // 'goog:chromeOptions': {
+      //   args: ['--disable-gpu'],
+      // },
       acceptInsecureCerts: true,
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
@@ -123,7 +132,9 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ['browserstack'],
+  // services: ['browserstack', 'intercept'],
+  // services: ['chromedriver', 'intercept'],
+  services: ['chromedriver','devtools'],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
